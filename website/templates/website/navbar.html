@@ -1,0 +1,37 @@
+{% load static %}
+<header>
+    <div class="header__back">
+        <div class="container">
+            <nav>
+                <input type="checkbox" id="check">
+                <label for="check" class="checkbtn">
+                    <i class="fa-solid fa-bars"></i>
+                </label>
+                <a href="{% url 'home'%}">
+                    <img src="{% static 'images/311667653_189004720466192_3333114414699095088_n-removebg-preview 1.svg' %}" alt="logo">
+                </a>
+                <ul class="links">
+                    <li><a class="active" href="{% url 'home'%}">Home</a></li>
+                    <li><a class="" href="{% url 'home'%}">Cities</a></li>
+                    <li><a href="{% url 'gardens'%}">Garden</a></li>
+                    <ul class="links__3">
+                        <!-- <li>
+                        <a href=""><img src="images/Symbol.svg" alt=""></a>
+                    </li> -->
+                        <li>
+                            <a href="https://muslimhands.org.uk/donate">DONATE</a>
+                        </li>
+                    </ul>
+                </ul>
+                <ul class="links__2">
+                    <li>
+                        <a href="https://www.facebook.com/MuslimHandsMRP"><img src="{% static 'images/Symbol.svg' %}" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="https://muslimhands.org.uk/donate">DONATE</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>

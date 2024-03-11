@@ -1,0 +1,311 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MH Climate Action</title>
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <header class="headdd">
+        <div class="header__back">
+            <div class="container">
+                <nav>
+                    <input type="checkbox" id="check">
+                    <label for="check" class="checkbtn">
+                        <i class="fa-solid fa-bars"></i>
+                    </label>
+                    <a href="{% url 'home'%}">
+                        <img src="{% static 'images/311667653_189004720466192_3333114414699095088_n-removebg-preview 1.svg' %}" alt="logo">
+                    </a>
+                    <ul class="links">
+                        <li><a class="active" href="{% url 'home'%}">Home</a></li>
+                        <li><a class="" href="#cities">Cities</a></li>
+                        <li><a href="{% url 'gardens'%}">Garden</a></li>
+                        <ul class="links__3">
+                            <!-- <li>
+                            <a href=""><img src="images/Symbol.svg" alt=""></a>
+                        </li> -->
+                            <li>
+                                <a href="https://muslimhands.org.uk/donate">DONATE</a>
+                            </li>
+                        </ul>
+                    </ul>
+                    <ul class="links__2">
+                        <li>
+                            <a href="https://www.facebook.com/MuslimHandsMRP"><img src="{% static 'images/Symbol.svg' %}" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="https://muslimhands.org.uk/donate">DONATE</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="header__text">
+            <h1>
+                Muslim hands Plantation Project
+            </h1>
+            <p>
+                ‘Indeed, the men who practice charity and the women who practice charity … it will be multiplied for
+                them, and they will have a noble reward.’
+            </p>
+            <a href="gardens.html">LEARN MORE</a>
+        </div>
+    </header>
+    <main>
+        <section class="second__sec">
+            <p>
+                Muslim hands supports the identification and registration of collections held across Pakistan.
+            </p>
+        </section>
+        <section id="cities" class="third__sectop">
+            <div class="container">
+                <h1 class="text-center">
+                    Cities
+                </h1>
+                <div class="third__sec">
+                    <div class="col-lg-12 mt-5">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 mb-5">
+                                <div class="overf">
+                                    <img class="zoom-image"  src="{% static 'images/Mirpur_city.jpg' %}" alt="">
+                                </div>
+                                <h4 class="mt-3">Mirpur</h4>
+                                <p>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                                </p>
+                                <a href="{% url 'cities_mirpur' %}">View Gardens</a>
+                            </div>
+                            <div class="col-lg-4 col-md-4 mb-5">
+                                <div class="overf">
+                                    <img class="zoom-image"  src="{% static 'images/Pakistan_is_full_of_breathtaking_views_-_Muzafarabad.jpeg'%}" alt="">
+                                </div>
+                                <h4 class="mt-3">Muzaffarabad</h4>
+                                <p>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                                </p>
+                                <a href="{% url 'cities_muzaffarabad' %}">View Gardens</a>
+                            </div>
+                            <div class="col-lg-4 col-md-4 mb-5">
+                                <div class="overf">
+                                    <img class="zoom-image"  src="{% static 'images/27033673056_b4ffc18f3c_b.jpg' %}" alt="">
+                                </div>
+                                <h4 class="mt-3">Rawalakot</h4>
+                                <p>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                                </p>
+                                <a href="{% url 'cities_rawalakot' %}">View Gardens</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 ">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 mb-5">
+                                <div class="overf">
+                                    <img class="zoom-image"  src="{% static 'images/Kotli_from_above.jpg'%}" alt="">
+                                </div>
+                                <h4 class="mt-3">Kotli</h4>
+                                <p>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                                </p>
+                                <a href="{% url 'cities_kotli' %}">View Gardens</a>
+                            </div>
+                            <div class="col-lg-4 col-md-4 mb-5">
+                                <div class="overf">
+                                    <img class="zoom-image"  src="{% static 'images/beauty-azad-kashmir-muzzafrabad-bhimber-600nw-1389311003.webp' %}" alt="">
+                                </div>
+                                <h4 class="mt-3">Bhimber</h4>
+                                <p>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                                </p>
+                                <a href="{% url 'cities_bhimber' %}">View Gardens</a>
+                            </div>
+                            <div class="col-lg-4 col-md-4 mb-5">
+                                <div class="overf">
+                                    <img class="zoom-image"  src="{% static 'images/Ramkot-Fort-Dadyal.jpg' %}" alt="">
+                                </div>
+                                <h4 class="mt-3">Dadyal</h4>
+                                <p>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                                </p>
+                                <a href="{% url 'cities_dadyal' %}">View Gardens</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container__2 mt-5">
+                    <div class="media">
+                        <div class="media__three">
+                            <div class="media__threeicon">
+                                <a href="https://www.facebook.com/MuslimHandsMRP">
+                                    <i class="fa-brands fa-square-facebook"></i>
+                                </a>
+                            </div>
+                            <div class="media__threeicon">
+                                <img src="{% static 'images/311667653_189004720466192_3333114414699095088_n-removebg-preview 2.svg' %}" alt="">
+                                <p>103k Followers</p>
+                            </div>
+                            <div class="media__threefollow">
+                                <div >
+                                    <a class="follow__page" href="https://www.facebook.com/MuslimHandsMRP">
+                                        <i class="fa-brands fa-square-facebook"></i>
+                                        <p>Follow Page</p>
+                                    </a>
+                                </div>
+                                <div class="share__page mt-3">
+                                    <a class="follow__page" href="https://www.facebook.com/MuslimHandsMRP">
+                                        <i class="fa-sharp fa-solid fa-share"></i>
+                                    <p>Share Page</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <video class="video" controls autoplay muted>
+                            <source src="{% static 'images/WhatsApp Video 2024-01-13 at 10.39.47_f82568ab.mp4' %}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="member">
+                <div class="member__backimg">
+                    <div class="container">
+                        <div class="member__cont">
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="col-lg-6 col__white">
+                                        <h2>
+                                            Become a Member
+                                        </h2>
+                                        <p>
+                                            Our garden plants face increasing challenges, including growing difficulties, fashion trends, loss of habitat and climate change. They need your help.
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <a class="float__r" href="https://muslimhands.org.uk/donate">LEARN MORE</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="fourth__sec text-center">
+                <div class="container">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <p><span id="count1">50+</span>Gardens</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <p><span id="count2">100+</span>Gardens</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <p><span id="count3">70%</span>Greenery</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="text-center">
+        <div class="footer__top">
+            <a href="{% url 'home'%}">
+                <img src="{% static 'images/311667653_189004720466192_3333114414699095088_n-removebg-preview 1.svg' %}" alt="logo">
+            </a>
+        </div>
+        <hr>
+        <div class="footer__bottom">
+            <div class="container__2">
+                <p>© Copyright 2024 muslim hands | All Rights Reserved</p>
+                <p>Muslim Hands Mirpur  Sector B-3 Allama Iqbal Road, Mirpur, Pakistan</p>
+                <ul class="footer__bottommenu">
+                    <li><a href="https://www.facebook.com/MuslimHandsMRP"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href="https://twitter.com/MuslimHandsMRP"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="https://www.instagram.com/muslimhandsmirpur/"><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        // Function to start counting animation
+        function startCounting() {
+            $('#count1').addClass('counting').prop('Counter', 0).animate({
+                Counter: 50
+            }, {
+                duration: 5000,
+                step: function (now) {
+                    $(this).html(Math.ceil(now) + '<span>+</span>');
+                }
+            });
+
+            $('#count2').addClass('counting').prop('Counter', 0).animate({
+                Counter: 500
+            }, {
+                duration: 5000,
+                step: function (now) {
+                    $(this).html(Math.ceil(now) + '<span>+</span>');
+                }
+            });
+
+            $('#count3').addClass('counting').prop('Counter', 0).animate({
+                Counter: 70
+            }, {
+                duration: 5000,
+                step: function (now) {
+                    $(this).html(Math.ceil(now) + '<span>%</span>');
+                }
+            });
+        }
+
+    
+        // Using Intersection Observer API to detect when the element is in the viewport
+        var observer = new IntersectionObserver(function (entries) {
+            if (entries[0].isIntersecting) {
+                // Start counting animation
+                startCounting();
+                // Disconnect the observer after animation starts
+                observer.disconnect();
+            }
+        }, { threshold: 0.5 }); // Adjust the threshold as needed
+    
+        // Observe the target element
+        observer.observe(document.querySelector('.fourth__sec'));
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const imageContainers = document.querySelectorAll('.zoom-image-container');
+      
+          imageContainers.forEach(function (container) {
+            const image = container.querySelector('.zoom-image');
+      
+            container.addEventListener('mouseover', function () {
+              image.style.transitionDuration = '3s';
+              image.style.transform = 'scale(1.5)';  // Adjust the scale factor as needed
+            });
+      
+            container.addEventListener('mouseout', function () {
+              image.style.transitionDuration = '0.5s'; // Reset transition duration
+              image.style.transform = 'scale(1)';
+            });
+          });
+        });
+      </script>
+          
+</body>
+
+</html>

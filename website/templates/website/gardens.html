@@ -1,0 +1,266 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MH Climate Action</title>
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <div class="header__back">
+            <div class="container">
+                <nav>
+                    <input type="checkbox" id="check">
+                    <label for="check" class="checkbtn">
+                        <i class="fa-solid fa-bars"></i>
+                    </label>
+                    <a href="{% url 'home'%}">
+                        <img src="{% static 'images/311667653_189004720466192_3333114414699095088_n-removebg-preview 1.svg' %}" alt="logo">
+                    </a>
+                    <ul class="links">
+                        <li><a  href="{% url 'home'%}">Home</a></li>
+                        <li><a href="{% url 'home'%}">Cities</a></li>
+                        <li><a class="active" href="{% url 'gardens'%}">Garden</a></li>
+                        <ul class="links__3">
+                            <!-- <li>
+                            <a href=""><img src="images/Symbol.svg" alt=""></a>
+                        </li> -->
+                            <li>
+                                <a href="https://muslimhands.org.uk/donate">DONATE</a>
+                            </li>
+                        </ul>
+                    </ul>
+                    <ul class="links__2">
+                        <li>
+                            <a href="https://www.facebook.com/MuslimHandsMRP"><img src="{% static 'images/Symbol.svg' %}" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="https://muslimhands.org.uk/donate">DONATE</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main id="garden">
+       <section class="parent__sec">
+        <section class="gard1__sect">
+            <h1 class="text-center">Gardens</h1>
+        </section>
+        <section class="gard2__sect bgg__common">
+            <div class="gardenpics">
+                <div class="gardenpics__top">
+                    <div class="gardenpics__topimg">
+                        <img src="{% static 'images/Rectangle 16.jpg'%}" alt="">
+                    </div>
+                    <div class="gardenpics__topimg">
+                        <img src="{% static 'images/Rectangle 17.svg'%}" alt="">
+                    </div>
+                </div>
+                <div class="gardenpics__top">
+                    <div class="gardenpics__topimg">
+                        <img src="{% static 'images/Rectangle 18.jpg'%}" alt="">
+                    </div>
+                    <div class="gardenpics__topimg">
+                        <img src="{% static 'images/Rectangle 19.svg'%}" alt="">
+                    </div>
+                    <div class="gardenpics__topimg">
+                        <img src="{% static 'images/Rectangle 20.jpg'%}" alt="">
+                    </div>
+                    <div class="gardenpics__topimg">
+                        <img src="{% static 'images/Rectangle 21.jpg'%}" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="gard1__sect">
+            <div class="container">
+                <p class="text-center fo__24">In the year 2020, Muslim Hands Mirpur, a charitable organization,
+                    established a thriving Moringa tree garden in Viewpoint Park Mirpur. This garden boasts an
+                    impressive collection of over 250 Moringa trees, which have now reached full maturity.</p>
+            </div>
+        </section>
+       </section>
+        <section>
+            <div class="garenbenefit bg-white">
+                <div class="container">
+                    <h1 class="text-center mb-4">
+                        Benefits of Moringa Powder
+                    </h1>
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-4 mt-2">
+                                <div class="card">
+                                    <ul>
+                                        <li>Increased Mental Clarity</li>
+                                        <li>Normalizes Blood Sugar</li>
+                                        <li>Appetite Suppressant</li>
+                                        <li>Antioxidant</li>
+                                        <li>Anti-inflammatory</li>
+                                        <li>Strengthens Immune System</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mt-2">
+                                <div class="card">
+                                    <ul>
+                                        <li>Enhances Skin Health</li>
+                                        <li>Anti-Cholesterol</li>
+                                        <li>UTI</li>
+                                        <li>Improves Digestion</li>
+                                        <li>Increased Mental Clarity</li>
+                                        <li>Reduces Wrinkles/Age Lines</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mt-2">
+                                <div class="card">
+                                    <ul>
+                                        <li>Normalizes Blood Pressure</li>
+                                        <li>Anti-depressant</li>
+                                        <li>46 anti-oxidants</li>
+                                        <li>36 anti-inflammatories</li>
+                                        <li>18 amino acids</li>
+                                        <li>Fungal</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </section>
+        <div class="moringa__packet mtt-50">
+            <img src="{% static 'images/2b87576221703f7a4d6252a35faf8d7d.png'%}" alt="">
+        </div>
+        <section>
+            <div class="gardenbackgirl position-relative mtt-50">
+                <div class="left">
+                    <div class="overf__3">
+                        <img src="{% static 'images/001edad715f948efcc59c5fc2ae28b24.png'%}" alt="">
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="gardenbackgirl__content">
+                        <ul>
+                            <li>
+                                Muslim Hands not only supports reforestation efforts but also empowers
+                                individuals by
+                                creating personalized web pages. Thanks to our assistance, many now earn income
+                                through
+                                our developed websites, contributing to sustainable livelihoods.
+                            </li>
+                            <li>
+                                Their hard work has paved the way for harnessing the extraordinary benefits of
+                                Moringa
+                                offering nutrient-rich Moringa powder for improving health. This initiative not
+                                only
+                                supports a healthy lifestyle but also contribute to the community empowerment,
+                                sustainable agriculture brighter future for all.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="moringa__packet mtt-50">
+                <img src="{% static 'images/9278a4544963c625a60e2682dbbe7a4d.png'%}" alt="">
+            </div>
+        </section>
+        <section>
+            <div class="gardenbackgirl mtt-50">
+                <div class="left">
+                    <div class="gardenbackgirl__content">
+                        <ul>
+                            <li>
+                                Muslim Hands Mirpur, a charitable organization, has taken a proactive step
+                                towards promoting
+                                sustainable gardening practices by establishing two lemon gardens in
+                                Viewpoint Park Mirpur
+                                and one in Hilton. These gardens collectively boast more than 200 fully
+                                grown organic lemon
+                                (lime) plants, meticulously planted and nurtured by the organization itself.
+                                
+                            </li>
+                            <li>
+                                The cultivation
+                                of these lemons has been entirely fertilizer-free, ensuring that the produce
+                                remains both
+                                healthy and eco-friendly.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="overf__3">
+                        <img src="{% static 'images/f7355834d875c6eb9e9332e3484dcffb.png'%}" alt="">
+                    </div>
+                </div>
+            </div>
+             <div class="moringa__packet mtt-50">
+                <img src="{% static 'images/6f1dfd05b55d665b466c416fcd2d9720.png'%}" alt="">
+            </div>
+        </section>
+        <section>
+            <div class="gardenbackgirl mtt-50">
+                <div class="left">
+                    <div class="overf__3">
+                        <img src="{% static 'images/2482e7882b63100524fc1ecb98abb384.png'%}" alt="">
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="gardenbackgirl__content">
+                        <ul>
+                            <li>
+                                In 2019, Muslim Hands Mirpur initiated a project by planting 250 citrus
+                                fruit trees. Today, these orchards stand as a testament to our commitment,
+                                as they have flourished and yielded a bountiful harvest. These fruits have
+                                become a source of livelihood for those in need, providing opportunities for
+                                individuals who face economic challenges. 
+                            </li>
+                            <li>
+                                The success of this project is
+                                evident as the ripe citrus fruits have been sold, and the revenue generated
+                                has enabled many to establish and run their own businesses, illustrating the
+                                transformative impact of Muslim Hands in the community.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+               
+            </div>
+        </section>
+    </main>
+    <footer class="text-center">
+        <div class="footer__top">
+            <a href="{% url 'home'%}">
+                <img src="{% static 'images/311667653_189004720466192_3333114414699095088_n-removebg-preview 1.svg' %}" alt="logo">
+            </a>
+        </div>
+        <hr>
+        <div class="footer__bottom">
+            <div class="container__2">
+                <p>© Copyright 2023 muslim hands | All Rights Reserved</p>
+                <p>Muslim Hands Mirpur Sector B-3 Allama Iqbal Road, Mirpur, Pakistan</p>
+                <ul class="footer__bottommenu">
+                    <li><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
