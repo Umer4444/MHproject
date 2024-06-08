@@ -36,7 +36,7 @@ EMAIL_HOST = 'smtp.example.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'mumermalik1245@gmail.com'
-EMAIL_HOST_PASSWORD = 'rwxt hylp kpoh pgdc'
+EMAIL_HOST_PASSWORD = 'senttome'
 ADMIN_EMAIL = 'mumermalik1245@example.com'
 
 
