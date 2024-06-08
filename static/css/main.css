@@ -678,6 +678,12 @@ nav a img{
     color: black;
     text-decoration: none;
 }
+.links select{
+    background: #009558;
+    color: #dedede;
+    border: none;
+    width: 70%;
+}
 @keyframes counting {
     from {
         opacity: 0;
