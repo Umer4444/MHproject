@@ -1,0 +1,95 @@
+{% extends "website/main.html" %}
+{% load static %}
+{% block title %}Gallery{% endblock %}
+
+{% block content %}
+<main>
+    <section class="third__sectop">
+        <div class="container citygardens">
+            <h1 class="text-center">Gallery</h1>
+
+            <p class="mt-5">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quos earum tempora quia illo esse
+                mollitia culpa natus veritatis rem reiciendis impedit nemo, quisquam quae error? Molestias consequuntur
+                amet voluptates.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. In, obcaecati earum nulla dignissimos qui
+                officia, iure ipsam ad quo eligendi eius, quibusdam libero. Nemo amet molestias eum. Obcaecati, aperiam
+                voluptatum!
+            </p>
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="overf__2">
+                            <img src="{% static 'images/Neelum1.jpg'%}" alt="image">
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="overf__2">
+                            <img src="{% static 'images/Neelum2.jpg'%}" alt="image">
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="overf__2">
+                            <img src="{% static 'images/Neelum3.jpg'%}" alt="image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 mt-4">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="overf__2">
+                            <img src="{% static 'images/Neelum4.jpg'%}" alt="image">
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="overf__2">
+                            <img src="{% static 'images/Neelum5.jpg'%}" alt="image">
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="overf__2">
+                            <img src="{% static 'images/Neelum6.jpg'%}" alt="image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="third__sectop">
+        <div class="container">
+
+            <p class="mt-5">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quos earum tempora quia illo esse
+                mollitia culpa natus veritatis rem reiciendis impedit nemo, quisquam quae error? Molestias consequuntur
+                amet voluptates.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. In, obcaecati earum nulla dignissimos qui
+                officia, iure ipsam ad quo eligendi eius, quibusdam libero. Nemo amet molestias eum. Obcaecati, aperiam
+                voluptatum!
+            </p>
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="gallery__video mt-5">
+                            <video class="video" controls="" autoplay="" muted="">
+                                <source src="/static/images/WhatsApp%20Video%202024-01-13%20at%2010.39.47_f82568ab.mp4"
+                                    type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="gallery__video mt-5">
+                            <video class="video" controls="" autoplay="" muted="">
+                                <source src="/static/images/WhatsApp%20Video%202024-01-13%20at%2010.39.47_f82568ab.mp4"
+                                    type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

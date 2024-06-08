@@ -1,4 +1,7 @@
 from django.shortcuts import render, redirect
+from django.core.mail import send_mail
+from .forms import ContactFormForm
+from django.conf import settings
 
 # Create your views here.
 
@@ -149,3 +152,45 @@ def cities_bhimber(request):
 
 def cities_dadyal(request):
     return render(request, 'website/cities_dadyal.html')
+
+def contact_us(request):
+    return render(request, 'website/contact_us.html')
+
+def about_us(request):
+    return render(request, 'website/about_us.html')
+
+def events(request):
+    return render(request, 'website/events.html')
+
+def gallery(request):
+    return render(request, 'website/gallery.html')
+
+def contact_view(request):
+    if request.method == 'POST':
+        form = ContactFormForm(request.POST)
+        if form.is_valid():
+            contact_form = form.save()
+
+            # Sending email to user
+            send_mail(
+                'Thank you for your message',
+                f'Thank you for contacting us. Here is a copy of your message:\n\n{contact_form.message}',
+                settings.EMAIL_HOST_USER,
+                [contact_form.email],
+            )
+
+            # Sending email to admin
+            send_mail(
+                'New contact form submission',
+                f'Name: {contact_form.name}\nEmail: {contact_form.email}\nMessage: {contact_form.message}',
+                settings.EMAIL_HOST_USER,
+                [settings.ADMIN_EMAIL],
+            )
+
+            return redirect('success')
+    else:
+        form = ContactFormForm()
+    return render(request, 'website/contact_form.html', {'form': form})
+
+def success_view(request):
+    return render(request, 'website/success.html')

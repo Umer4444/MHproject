@@ -30,6 +30,17 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.example.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'mumermalik1245@gmail.com'
+EMAIL_HOST_PASSWORD = 'rwxt hylp kpoh pgdc'
+ADMIN_EMAIL = 'mumermalik1245@example.com'
+
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -125,8 +136,13 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/images/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static_cdn')
+# ]
+MEDIA_ROOT = BASE_DIR / 'media'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static_cdn')
+    os.path.join(BASE_DIR, 'static')
 ]

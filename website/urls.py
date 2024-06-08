@@ -54,4 +54,11 @@ urlpatterns = [
     path('cities_kotli/', views.cities_kotli, name="cities_kotli"),
     path('cities_bhimber/', views.cities_bhimber, name="cities_bhimber"),
     path('cities_dadyal/', views.cities_dadyal, name="cities_dadyal"),
+    path('contact_us/', views.contact_us, name="contact_us"),
+    path('about_us/', views.about_us, name="about_us"),
+    path('gallery/', views.gallery, name="gallery"),
+    path('events/', views.events, name='events'),
+    path('contact/', views.contact_view, name='contact'),
+    path('contact/', views.contact_view, name='contact'),
+    path('success/', views.success_view, name='success'),
 ]
