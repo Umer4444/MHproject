@@ -33,12 +33,18 @@
                     <li><a href="{% url 'gallery'%}">Gallery</a></li>
 
                     <li class="custom-select">
-                        <div class="selected-option">Contact Us</div>
+                        <!-- <div class="selected-option">Contact Us
                             <div class="options">
                                 <div class="option"><a href="{% url 'contact_us'%}">Contact Us</a></div>
                                 <div class="option"><a href="{% url 'about_us'%}">About Us</a></div>
                                 <div class="option"><a href="{% url 'gardens'%}">Request for Plants</a></div>
                             </div>
+                        </div> -->
+                        <select name="Contact Us" id="">
+                            <option value="">Contact Us</option>
+                            <option value="">About Us</option>
+                            <option value="">Request for Plants</option>
+                        </select>
                     </li>
                     
                     <ul class="links__3">
