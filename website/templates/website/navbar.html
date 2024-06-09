@@ -18,13 +18,12 @@
 
                 <li class="custom-select">
                     <div class="selected-option">Contact Us</div>
-                        <div class="options">
-                            <div class="option"><a href="{% url 'contact_us'%}">Contact Us</a></div>
-                            <div class="option"><a href="{% url 'about_us'%}">About Us</a></div>
-                            <div class="option"><a href="{% url 'gardens'%}">Request for Plants</a></div>
-                        </div>
+                    <div class="options">
+                        <div class="option"><a href="{% url 'contact_us' %}">Contact Us</a></div>
+                        <div class="option"><a href="{% url 'about_us' %}">About Us</a></div>
+                        <div class="option"><a href="{% url 'gardens' %}">Request for Plants</a></div>
+                    </div>
                 </li>
-                
                 <ul class="links__3">
                     <!-- <li>
                         <a href=""><img src="images/Symbol.svg" alt=""></a>
@@ -46,3 +45,19 @@
         </nav>
     </div>
 </header>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var selectedOption = document.querySelector('.selected-option');
+        var optionsContainer = document.querySelector('.options');
+
+        selectedOption.addEventListener('click', function () {
+            optionsContainer.style.display = optionsContainer.style.display === 'none' || optionsContainer.style.display === '' ? 'block' : 'none';
+        });
+
+        document.addEventListener('click', function (event) {
+            if (!selectedOption.contains(event.target)) {
+                optionsContainer.style.display = 'none';
+            }
+        });
+    });
+</script>
