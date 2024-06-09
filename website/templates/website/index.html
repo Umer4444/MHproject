@@ -713,18 +713,25 @@
         });
     </script>
 
-    <script>
-        // Sample data
-        const data = [
-            { label: 'Mangoes', value: 30 },
-            { label: 'Apples', value: 20 },
-            { label: 'Peaches', value: 20 },
-            { label: 'Bananas', value: 30 }
-        ];
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script>
+    // Sample data
+    const data = [
+        { label: 'Mangoes', value: 30 },
+        { label: 'Apples', value: 20 },
+        { label: 'Peaches', value: 20 },
+        { label: 'Bananas', value: 30 }
+    ];
 
-        // Set up SVG dimensions
-        const width = 400;
-        const height = 400;
+    // Function to draw the pie chart
+    function drawPieChart() {
+        // Remove any existing SVG
+        d3.select("#myPieChart").select("svg").remove();
+
+        // Get container dimensions
+        const containerWidth = document.querySelector(".pie").clientWidth;
+        const width = containerWidth;
+        const height = containerWidth; // Keeping it square
         const radius = Math.min(width, height) / 2;
 
         // Create SVG element
@@ -760,10 +767,16 @@
         arcs.append("text")
             .attr("transform", d => `translate(${arc.centroid(d)})`)
             .attr("text-anchor", "middle")
-            .attr("font-size", "14px")
+            .attr("font-size", `${Math.min(width, height) / 25}px`) // Adjust font size based on the chart size
             .text(d => `${d.data.label} (${d.data.value}%)`);
-    </script>
+    }
 
+    // Initial draw
+    drawPieChart();
+
+    // Redraw on window resize
+    window.addEventListener('resize', drawPieChart);
+</script>
 
 
 

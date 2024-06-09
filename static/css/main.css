@@ -686,9 +686,15 @@ nav a img{
 .custom-select:hover .options {
     display: block;
 }
-.pie{
-    width: 444px; /* Set the width of the container */
+.pie {
+    width: 100%;
+    max-width: 600px; /* Adjust the max-width as needed */
     margin: 0 auto;
+}
+
+#myPieChart {
+    width: 100%;
+    height: auto;
 }
 .contact_us, .mt-40{
     margin-top: 40px;
@@ -1051,6 +1057,10 @@ nav a img{
         float: right;
         object-fit: contain;
     }
+    .gardenpics__topimg img{
+        margin-bottom: 10px;
+    }
+    
     /* .gardenbackgirl__content, .gardenbanana__content {
         top: 5%;
     }
