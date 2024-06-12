@@ -5,7 +5,11 @@
 }
 @font-face {
     font-family: myPara;
-    src: url(../css/MyriadPro-Light.otf);
+    src: url(../css/Signika-Light.ttf);
+}
+@font-face {
+    font-family: bigHead;
+    src: url(../css/Signika-SemiBold.ttf);
 }
 * {
     margin: 0;
@@ -14,7 +18,7 @@
 }
 
 
-h4{
+h4, .card-body h5{
     font-family: myHeadF;
 }
 p{
@@ -31,12 +35,30 @@ p{
 }
 
 .headdd {
-    background-image: url(../images/rs-sbg-px\ →\ rs-sbg-wrap\ →\ rs-sbg.jpg);
+    position: relative; /* Added */
+    background-image: url(../images/2.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 100vh;
 }
+.header__text h1,
+.header__text p,
+.header__text a {
+    color: inherit; /* Added */
+}
+
+.overlay { /* Added */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1); /* Adjust the opacity to make it darker or lighter */
+    z-index: 1;
+}
+
+
 
 .header__back {
     background: #009558;
@@ -133,24 +155,22 @@ nav {
 
 .header__text {
     position: absolute;
-    left: 50%;
+    left: 2%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(0, -50%);
     color: white;
     width: 41%;
     text-align: center;
-    z-index: 1;
+    z-index: 2;
 }
 
 .header__text h1 {
     font-size: 53px;
-    font-family: alternate gothic;
+    font-family: bigHead;
 }
 
 .header__text p {
     font-size: 22px;
-    font-style: italic;
-    line-height: 42px;
 }
 
 .header__text a{
@@ -193,7 +213,7 @@ padding: 50px 0;
     margin-top: 80px;
     padding: 50px 0;
 }
-.third__sec img, .third__sec p{
+.third__sec img{
     width: 80%;  
 }
 .third__sec h1{
@@ -586,7 +606,7 @@ nav a img{
     font-size: 60px;
     font-weight: 700;
     text-align: center;
-    font-family: alternate gothic;
+    font-family: bigHead;
 }
 .connected p{
     font-size: 20px;
@@ -876,8 +896,6 @@ nav a img{
         transform: translate(-50%, 0);
         width: auto;
     }
-   
-
 }
 
 @media only screen and (min-width: 449px) and (max-width:767px) {
@@ -958,6 +976,10 @@ nav a img{
         width: 70%;
         float: right;
         object-fit: contain;
+    }
+    .header__text{
+        left: 50%;
+        transform: translate(-50%, -50%);    
     }
 }
 
@@ -1063,6 +1085,10 @@ nav a img{
     }
     .gardenpics__topimg img{
         margin-bottom: 10px;
+    }
+    .header__text{
+        left: 50%;
+        transform: translate(-50%, -50%);    
     }
     
     /* .gardenbackgirl__content, .gardenbanana__content {
