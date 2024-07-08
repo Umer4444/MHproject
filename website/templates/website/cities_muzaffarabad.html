@@ -1,0 +1,35 @@
+{% extends "website/main.html" %}
+{% load static %}
+{% block title %}Cities Muzaffarabad{% endblock %}
+
+{% block content %}
+    <main>
+        <section class="third__sectop">
+           <div class="container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53448.25161340113!2d73.70062248990487!3d33.14808501845756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391feb8b4d030e19%3A0x4ec2b8053d7b1051!2sNew%20Mirpur%20City!5e0!3m2!1sen!2s!4v1707191988284!5m2!1sen!2s" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="mirpurlist mt-5">
+                <table border="2" width="100%">
+                    <tr>
+                        <th>Location</th>
+                        <th>Plants Type</th>
+                        <th>Total Gardens</th>
+                        <th>Total Plants</th>
+                    </tr>
+                    <tr>
+                        <td><a href="{% url 'Nelum_Muzaffarabad'%}">Neelum</a></td>
+                        <td>Fruit & Olive Tree</td>
+                        <td>2 Fruit + 1 Olive Tree Garden</td>
+                        <td>400 Fruit & 1000 Olive Trees</td>
+                    </tr>
+                    <tr>
+                        <td><a href="{% url 'Rarra_Central_Jail_Muzaffarabad'%}">Rarra Central Jail Muzaffarabad</a></td>
+                        <td>Fruit</td>
+                        <td>1</td>
+                        <td>400 Fruit Plants</td>
+                    </tr>
+                </table>
+            </div>
+           </div>
+        </section>
+    </main>
+{% endblock %}

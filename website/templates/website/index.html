@@ -1,0 +1,876 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MH Climate Action</title>
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body>
+    <header class="headdd">
+        <div class="header__back fixed-top">
+            <nav class="">
+                <input type="checkbox" id="check">
+                <label for="check" class="checkbtn">
+                    <i class="fa-solid fa-bars"></i>
+                </label>
+                <a href="{% url 'home'%}">
+                    <img src="{% static 'images/Climate-Action-Logo.png' %}" alt="logo">
+                </a>
+                <ul class="links">
+                    <li class="{% if request.path == '/' %}active{% endif %}"><a href="{% url 'home'%}">Home</a></li>
+                    <li class="{% if request.path == '/gardens/' %}active{% endif %}"><a href="{% url 'gardens'%}">Achievements</a></li>
+                    <li class="{% if request.path == '/gallery/' %}active{% endif %}"><a href="{% url 'gallery'%}">Gallery</a></li>
+                    <li class="{% if request.path == '/training/' %}active{% endif %}"><a href="{% url 'training'%}">Training</a></li>
+                    <li class="{% if request.path == '/events/' %}active{% endif %}"><a href="{% url 'events'%}">Events</a></li>
+
+
+                    <li class="custom-select">
+                        <div class="selected-option">Contact Us</div>
+                        <div class="options">
+                            <div class="option"><a href="{% url 'contact_us' %}">Contact Us</a></div>
+                            <div class="option"><a href="{% url 'about_us' %}">About Us</a></div>
+                            <div class="option"><a href="https://docs.google.com/forms/d/1r0xzyGe33x4CpJpcVRLAXkPSvnG5oQ9KmpdqJSbz7wk/viewform?edit_requested=true">Request for Plants</a></div>
+                            <div class="option"><a href="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfLIVm1Y_xDEOLvqgWuT0vdwaUmdmKYrF5rDGERLXL3S0N7EQ/viewform?vc=0&c=0&w=1&flr=0&pli=1">Volunteer</a></div>
+                        </div>
+                    </li>
+                    <ul class="links__3">
+                        <!-- <li>
+                            <a href=""><img src="images/Symbol.svg" alt=""></a>
+                        </li> -->
+                        <li>
+                            <a class="bg__yell" href="https://muslimhands.org.uk/donate">DONATE</a>
+                        </li>
+                    </ul>
+                </ul>
+                <ul class="links__2">
+                    <!-- <li>
+                            <a href="https://www.facebook.com/MuslimHandsMRP"><img src="{% static 'images/Symbol.svg' %}" alt=""></a>
+                        </li> -->
+                    <li>
+                        <a class="bg__yell" href="https://muslimhands.org.uk/donate">DONATE</a>
+                    </li>
+                    <li><a class="_number" href="tel:0115 911 7222">+925827448900</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header__text">
+            <h1>
+                Muslim Hands Plantation Project
+            </h1>
+            <p>
+                ‘Indeed, the men who practice charity and the women who practice charity … it will be multiplied for
+                them, and they will have a noble reward.’
+            </p>
+            <a href="gardens.html">LEARN MORE</a>
+        </div>
+        <div class="overlay"></div> <!-- Added this line -->
+    </header>
+    <main>
+        <!-- <section class="second__sec">
+            <p>
+                Muslim hands supports the identification and registration of collections held across Pakistan.
+            </p>
+        </section> -->
+        <section id="cities" class="third__sectop">
+            <div class="container">
+                <h1 class="text-center">
+                    Cities
+                </h1>
+                <div class="third__sec">
+                    <div class="col-lg-12 mt-5">
+                        <div class="row">
+                            <div class="col-lg-4  mb-5">
+                                <div class="overf">
+                                    <img class="zoom-image" src="{% static 'images/Mirpur_city.jpg' %}" alt="">
+                                </div>
+                                <h4 class="mt-3">Mirpur</h4>
+                                <p>
+                                    Mirpur, formally recognized as New Mirpur City is the capital of the Mirpur
+                                    district. Geographically, Mirpur is situated on the southern borders of the former
+                                    State of Jammu and Kashmir. Adjacent to the Mangla Dam, Mirpur is a picturesque
+                                    small city, often referred to as "Mini London." It is the second most populous city
+                                    in Azad Kashmir and ranks as the 74th largest city in Pakistan. Renowned for its
+                                    majestic buildings and expansive bungalows, which are predominantly financed by its
+                                    expatriate community, Mirpur boasts a unique architectural landscape.
+                                </p>
+                                <a href="{% url 'cities_mirpur' %}">View Gardens</a>
+                            </div>
+                            <div class="col-lg-4  mb-5">
+                                <div class="overf">
+                                    <img class="zoom-image"
+                                        src="{% static 'images/Pakistan_is_full_of_breathtaking_views_-_Muzafarabad.jpeg'%}"
+                                        alt="">
+                                </div>
+                                <h4 class="mt-3">Muzaffarabad</h4>
+                                <p>
+                                    Muzaffarabad, serving as the largest city and the capital of Azad Kashmir presents a
+                                    rich cultural heritage, evident in its historic landmarks like the Red Fort and Pir
+                                    Chinasi Shrine, which attract tourists and historians alike. Located in Muzaffarabad
+                                    District, at the merging point of the Jhelum and Neelum River, it is 138 km away
+                                    from Rawalpindi and Islamabad, accessible via Kohala Bridge and Hazara Motorway. The
+                                    city thrives on a cottage industry focused on furniture making, woodcarving, garment
+                                    production, and embroidery work.
+                                </p>
+                                <a href="{% url 'cities_muzaffarabad' %}">View Gardens</a>
+                            </div>
+                            <div class="col-lg-4  mb-5">
+                                <div class="overf">
+                                    <img class="zoom-image" src="{% static 'images/27033673056_b4ffc18f3c_b.jpg' %}"
+                                        alt="">
+                                </div>
+                                <h4 class="mt-3">Rawalakot</h4>
+                                <p>
+                                    Rawalakot, serving as the capital of Poonch district in Azad Kashmir. Situated at an
+                                    elevation of 1,615 meters (5,300 feet) and 76 km from Kohalla, the city has road
+                                    connections to Rawalpindi and Islamabad via the neighboring districts of Azad Pattan
+                                    and Dhalkot, and to Muzaffarabad via Kohalla and Sudhangali. It stands as a
+                                    testament to the breathtaking beauty of the region. With its picturesque mountainous
+                                    surroundings and rich cultural heritage, Rawalakot offers both locals and visitors
+                                    alike a serene and captivating experience.
+                                </p>
+                                <a href="{% url 'cities_rawalakot' %}">View Gardens</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 ">
+                        <div class="row">
+                            <div class="col-lg-4  mb-5">
+                                <div class="overf">
+                                    <img class="zoom-image" src="{% static 'images/Kotli_from_above.jpg'%}" alt="">
+                                </div>
+                                <h4 class="mt-3">Kotli</h4>
+                                <p>
+                                    Kotli, situated within Kotli District of Azad Kashmir, Pakistan, rests along the
+                                    banks of the Poonch River, renowned for its waterfalls, including the Lala Waterfall
+                                    near the town and the Gulpur Waterfalls. Kotli, is uniquely known for its lush green
+                                    valleys and the annual Sarda festival, which celebrates the region's agricultural
+                                    heritage and attracts visitors from all over Azad Kashmir. Spanning an area of 1,862
+                                    square kilometers, Kotli is home to various neighborhoods such as Housing Scheme,
+                                    Pang Piran, and Shahi Muhallah. It stands as a vibrant hub within the district,
+                                    offering both natural beauty and cultural richness to its inhabitants and visitors.
+                                </p>
+                                <a href="{% url 'cities_kotli' %}">View Gardens</a>
+                            </div>
+                            <div class="col-lg-4  mb-5">
+                                <div class="overf">
+                                    <img class="zoom-image"
+                                        src="{% static 'images/beauty-azad-kashmir-muzzafrabad-bhimber-600nw-1389311003.webp' %}"
+                                        alt="">
+                                </div>
+                                <h4 class="mt-3">Bhimber</h4>
+                                <p>
+                                    Bhimbher, a historic town in Azad Kashmir, is renowned for its rich cultural
+                                    heritage and scenic landscapes. It serves as a strategic gateway connecting Azad
+                                    Kashmir with Pakistan.
+                                    Bhimber, serving as both a town and the administrative center of the corresponding
+                                    district in Azad Kashmir. Located approximately 47 kilometers southeast of Mirpur,
+                                    Bhimber stands as a pivotal hub in the region.
+                                </p>
+                                <a href="{% url 'cities_bhimber' %}">View Gardens</a>
+                            </div>
+                            <div class="col-lg-4  mb-5">
+                                <div class="overf">
+                                    <img class="zoom-image" src="{% static 'images/Ramkot-Fort-Dadyal.jpg' %}" alt="">
+                                </div>
+                                <h4 class="mt-3">Dadyal</h4>
+                                <p>
+                                    Dadyal is a vibrant town in Azad Kashmir known for its scenic beauty and cultural
+                                    heritage. It serves as a key commercial hub with strong ties to the Pakistani
+                                    community abroad.
+                                    Dadyal is situated as a tehsil within Mirpur district in Azad Jammu and Kashmir,
+                                    Pakistan, encompasses approximately 84 villages within its jurisdiction. The
+                                    villages collectively contribute to the diverse fabric of life and businesses in the
+                                    region of Azad Kashmir.
+
+                                </p>
+                                <a href="{% url 'cities_dadyal' %}">View Gardens</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section class="climate__action">
+            <div class="container">
+                <h1 class="text-center">
+                    Climate Action
+                </h1>
+                <div class="grid__container mt-4">
+                    <div class="grid__item">
+                        <img src="{% static 'images/d3bd4e83bfda.jpg' %}" alt="">
+                        <div class="content">
+                            <h3>
+                                Fruit Tree
+                            </h3>
+                            <p>
+                                £25
+                            </p>
+                            <div class="mt-4"><a href="https://muslimhands.org.uk/donate/climate-action/fruit-tree">View
+                                    Details</a></div>
+                        </div>
+                    </div>
+                    <div class="grid__item">
+                        <img src="{% static 'images/afe705c92018.jpg' %}" alt="">
+                        <div class="content">
+                            <h3>
+                                Bicycle
+                            </h3>
+                            <p>
+                                £90
+                            </p>
+                            <div class="mt-4"><a href="https://muslimhands.org.uk/donate/climate-action/bicycle">View
+                                    Details</a></div>
+                        </div>
+                    </div>
+                    <div class="grid__item">
+                        <img src="{% static 'images/c7ca3f02a411.jpg' %}" alt="">
+                        <div class="content">
+                            <h3>
+                                Plant a Tree
+                            </h3>
+                            <p>
+                                £25
+                            </p>
+                            <div class="mt-4"><a
+                                    href="https://muslimhands.org.uk/donate/climate-action/climate-action">View
+                                    Details</a></div>
+                        </div>
+                    </div>
+                    <div class="grid__item">
+                        <img src="{% static 'images/40e606f57b45.jpg' %}" alt="">
+                        <div class="content">
+                            <h3>
+                                40 Pumpkins
+                            </h3>
+                            <p>
+                                £20
+                            </p>
+                            <div class="mt-4"><a
+                                    href="https://muslimhands.org.uk/donate/climate-action/40-pumpkins">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="connected">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h1>
+                        Stay Connected
+                    </h1>
+                    <p>
+                        For regular updates on our work and the highest quality Islamic content
+                    </p>
+                </div>
+                <div class="col-lg-12 social__media">
+                    <div class="row align-items-center">
+                        <div class="col-lg-5">
+                            <video class="video" controls autoplay muted>
+                                <source src="{% static 'images/WhatsApp Video 2024-01-13 at 10.39.47_f82568ab.mp4' %}"
+                                    type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="col-lg-1"></div>
+                        <div class="col-lg-6">
+                            <h3>
+                                Like Our Social Media Pages
+                            </h3>
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <a href="https://www.facebook.com/MuslimHandsMRP/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="65"
+                                                height="65" viewBox="0 0 48 48">
+                                                <linearGradient id="Ld6sqrtcxMyckEl6xeDdMa_uLWV5A9vXIPu_gr1" x1="9.993"
+                                                    x2="40.615" y1="9.993" y2="40.615" gradientUnits="userSpaceOnUse">
+                                                    <stop offset="0" stop-color="#2aa4f4"></stop>
+                                                    <stop offset="1" stop-color="#007ad9"></stop>
+                                                </linearGradient>
+                                                <path fill="url(#Ld6sqrtcxMyckEl6xeDdMa_uLWV5A9vXIPu_gr1)"
+                                                    d="M24,4C12.954,4,4,12.954,4,24s8.954,20,20,20s20-8.954,20-20S35.046,4,24,4z">
+                                                </path>
+                                                <path fill="#fff"
+                                                    d="M26.707,29.301h5.176l0.813-5.258h-5.989v-2.874c0-2.184,0.714-4.121,2.757-4.121h3.283V12.46 c-0.577-0.078-1.797-0.248-4.102-0.248c-4.814,0-7.636,2.542-7.636,8.334v3.498H16.06v5.258h4.948v14.452 C21.988,43.9,22.981,44,24,44c0.921,0,1.82-0.084,2.707-0.204V29.301z">
+                                                </path>
+                                            </svg><span>Like us on Facebook</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <a href="https://x.com/muslimhandsuk?mx=2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="65"
+                                                height="65" viewBox="0 0 48 48">
+                                                <path fill="#03a9f4" d="M24 4A20 20 0 1 0 24 44A20 20 0 1 0 24 4Z">
+                                                </path>
+                                                <path fill="#fff"
+                                                    d="M36,17.12c-0.882,0.391-1.999,0.758-3,0.88c1.018-0.604,2.633-1.862,3-3 c-0.951,0.559-2.671,1.156-3.793,1.372C31.311,15.422,30.033,15,28.617,15C25.897,15,24,17.305,24,20v2c-4,0-7.9-3.047-10.327-6 c-0.427,0.721-0.667,1.565-0.667,2.457c0,1.819,1.671,3.665,2.994,4.543c-0.807-0.025-2.335-0.641-3-1c0,0.016,0,0.036,0,0.057 c0,2.367,1.661,3.974,3.912,4.422C16.501,26.592,16,27,14.072,27c0.626,1.935,3.773,2.958,5.928,3c-1.686,1.307-4.692,2-7,2 c-0.399,0-0.615,0.022-1-0.023C14.178,33.357,17.22,34,20,34c9.057,0,14-6.918,14-13.37c0-0.212-0.007-0.922-0.018-1.13 C34.95,18.818,35.342,18.104,36,17.12">
+                                                </path>
+                                            </svg>
+                                            <span>Follow us on Twitter</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 mt-3">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <a href="https://www.youtube.com/user/muslimhandsuk">
+                                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="65"
+                                                height="65" viewBox="0 0 48 48">
+                                                <linearGradient id="~ZEDpqmbqU5aeVFMXpznxa_cs0F7pb81QnM_gr1" x1=".439"
+                                                    x2="44.632" y1="-.097" y2="45.101" gradientUnits="userSpaceOnUse">
+                                                    <stop offset="0" stop-color="#f52537"></stop>
+                                                    <stop offset=".293" stop-color="#f32536"></stop>
+                                                    <stop offset=".465" stop-color="#ea2434"></stop>
+                                                    <stop offset=".605" stop-color="#dc2231"></stop>
+                                                    <stop offset=".729" stop-color="#c8202c"></stop>
+                                                    <stop offset=".841" stop-color="#ae1e25"></stop>
+                                                    <stop offset=".944" stop-color="#8f1a1d"></stop>
+                                                    <stop offset="1" stop-color="#7a1818"></stop>
+                                                </linearGradient>
+                                                <path fill="url(#~ZEDpqmbqU5aeVFMXpznxa_cs0F7pb81QnM_gr1)"
+                                                    d="M40,42H8c-1.105,0-2-0.895-2-2V8c0-1.105,0.895-2,2-2h32c1.105,0,2,0.895,2,2v32 C42,41.105,41.105,42,40,42z">
+                                                </path>
+                                                <path fill="#fff"
+                                                    d="M14.878,8h1.788l1.227,4.596L19.029,8h1.805l-2.067,6.834v4.664h-1.777v-4.664L14.878,8z M23.064,10.946c-1.389,0-2.31,0.919-2.31,2.278v4.158c0,1.495,0.781,2.273,2.31,2.273c1.269,0,2.267-0.848,2.267-2.273v-4.158 C25.331,11.897,24.341,10.946,23.064,10.946z M23.723,17.311c0,0.462-0.236,0.802-0.66,0.802c-0.436,0-0.688-0.356-0.688-0.802 v-3.947c0-0.464,0.214-0.808,0.657-0.808c0.484,0,0.691,0.334,0.691,0.808C23.723,13.364,23.723,17.311,23.723,17.311z M29.594,11.017v6.438c-0.192,0.241-0.621,0.636-0.927,0.636c-0.336,0-0.42-0.231-0.42-0.571v-6.503H26.67v7.089 c0,0.838,0.256,1.515,1.101,1.515c0.477,0,1.14-0.248,1.822-1.059v0.936h1.577v-8.48H29.594z M32.329,28.221 c-0.556,0-0.672,0.391-0.672,0.947v0.818h1.327v-0.819C32.986,28.621,32.87,28.221,32.329,28.221z M26.49,28.271 c-0.104,0.053-0.207,0.135-0.31,0.246v5.034c0.123,0.132,0.241,0.226,0.356,0.284c0.245,0.124,0.602,0.133,0.768-0.083 c0.087-0.114,0.13-0.299,0.13-0.557v-4.17c0-0.273-0.053-0.479-0.16-0.621C27.092,28.164,26.754,28.138,26.49,28.271z M32.483,21.821c-3.233-0.22-13.738-0.22-16.966,0c-3.493,0.238-3.906,2.349-3.932,7.904c0.026,5.546,0.435,7.666,3.932,7.904 c3.228,0.22,13.733,0.22,16.966,0c3.493-0.238,3.906-2.35,3.932-7.904C36.389,24.18,35.98,22.06,32.483,21.821z M17.183,35.087 h-1.692v-9.361h-1.75v-1.589h5.192v1.589h-1.75v9.361H17.183z M23.199,35.087h-1.502v-0.891c-0.277,0.329-0.565,0.58-0.864,0.751 c-0.809,0.464-1.921,0.453-1.921-1.186V27.01h1.501v6.192c0,0.325,0.078,0.544,0.4,0.544c0.293,0,0.7-0.376,0.883-0.605V27.01 h1.502v8.077L23.199,35.087z M28.981,33.414c0,0.999-0.374,1.777-1.373,1.777c-0.55,0-1.008-0.201-1.426-0.724v0.621h-1.516v-10.95 h1.516v3.526c0.339-0.413,0.799-0.755,1.336-0.755c1.1,0,1.465,0.93,1.465,2.025v4.48H28.981z M34.531,31.239h-2.873v1.525 c0,0.606,0.052,1.13,0.655,1.13c0.634,0,0.672-0.427,0.672-1.13v-0.561h1.546v0.607c0,1.556-0.668,2.499-2.251,2.499 c-1.434,0-2.168-1.045-2.168-2.499v-3.626c0-1.402,0.926-2.376,2.281-2.376c1.441,0,2.137,0.916,2.137,2.376v2.056L34.531,31.239z">
+                                                </path>
+                                                <path
+                                                    d="M23.998,21.656c3.434,0,6.868,0.055,8.485,0.165c3.497,0.238,3.906,2.359,3.932,7.904 c-0.026,5.554-0.438,7.666-3.932,7.904c-1.616,0.11-5.051,0.165-8.485,0.165c-3.434,0-6.867-0.055-8.481-0.165 c-3.497-0.238-3.906-2.359-3.932-7.904c0.026-5.556,0.438-7.666,3.932-7.904C17.131,21.711,20.564,21.656,23.998,21.656 M23.998,21.156c-3.749,0-7.011,0.064-8.515,0.166c-4.157,0.284-4.373,3.226-4.398,8.401c0.024,5.18,0.241,8.122,4.398,8.406 c1.504,0.102,4.766,0.166,8.515,0.166s7.013-0.064,8.519-0.166c4.157-0.284,4.374-3.226,4.398-8.401 c-0.024-5.18-0.241-8.122-4.398-8.406C31.011,21.22,27.747,21.156,23.998,21.156L23.998,21.156z"
+                                                    opacity=".07"></path>
+                                                <path fill="#1b1464"
+                                                    d="M20.834,8l-2.067,6.834v4.664h-1.777v-4.664L14.878,8h1.788l1.227,4.596L19.029,8H20.834 M23.064,10.946c1.277,0,2.267,0.951,2.267,2.278v4.158c0,1.425-0.998,2.273-2.267,2.273c-1.529,0-2.31-0.778-2.31-2.273v-4.158 C20.754,11.865,21.675,10.946,23.064,10.946 M23.063,18.113c0.425,0,0.66-0.34,0.66-0.802v-3.947c0-0.474-0.207-0.808-0.691-0.808 c-0.443,0-0.657,0.344-0.657,0.808v3.947C22.375,17.757,22.627,18.113,23.063,18.113 M31.171,11.017v8.48h-1.577v-0.936 c-0.683,0.811-1.346,1.059-1.822,1.059c-0.845,0-1.101-0.677-1.101-1.515v-7.089h1.577v6.503c0,0.34,0.083,0.571,0.42,0.571 c0.307,0,0.735-0.395,0.927-0.636v-6.438H31.171 M21.508,7.5h-0.674h-1.805h-0.391l-0.094,0.38l-0.67,2.708l-0.725-2.717 L17.05,7.5h-0.384h-1.788H14.2l0.2,0.648l2.091,6.762v4.589v0.5h0.5h1.777h0.5v-0.5v-4.59l2.046-6.763L21.508,7.5L21.508,7.5z M23.064,10.446c-1.655,0-2.81,1.142-2.81,2.778v4.158c0,1.788,0.998,2.773,2.81,2.773c1.629,0,2.767-1.14,2.767-2.773v-4.158 C25.831,11.64,24.641,10.446,23.064,10.446L23.064,10.446z M23.063,17.613c-0.163,0-0.188-0.189-0.188-0.302v-3.947 c0-0.308,0.106-0.308,0.157-0.308c0.103,0,0.191,0,0.191,0.308v3.947C23.223,17.511,23.169,17.613,23.063,17.613L23.063,17.613z M31.671,10.517h-0.5h-1.577h-0.5v0.5v6.249c-0.117,0.12-0.25,0.227-0.347,0.283c0-0.009,0-0.019,0-0.03v-6.503v-0.5h-0.5H26.67 h-0.5v0.5v7.089c0,1.818,1.12,2.015,1.601,2.015c0.289,0,0.768-0.071,1.322-0.435v0.312h0.5h1.577h0.5v-0.5v-8.48V10.517 L31.671,10.517z"
+                                                    opacity=".05"></path>
+                                                <g opacity=".05">
+                                                    <path
+                                                        d="M32.551,20.823c-1.517-0.103-4.794-0.167-8.553-0.167c-3.759,0-7.035,0.064-8.549,0.167 c-4.824,0.329-4.841,4.11-4.864,8.897c0.023,4.795,0.04,8.578,4.864,8.907c1.514,0.103,4.79,0.167,8.549,0.167 s7.036-0.064,8.553-0.167c4.824-0.329,4.841-4.11,4.864-8.897C37.392,24.936,37.374,21.152,32.551,20.823z M32.517,38.129 c-1.506,0.102-4.77,0.166-8.519,0.166c-3.749,0-7.011-0.064-8.515-0.166c-4.157-0.283-4.373-3.225-4.398-8.406 c0.024-5.175,0.241-8.117,4.398-8.401c1.504-0.102,4.766-0.166,8.515-0.166s7.013,0.064,8.519,0.166 c4.157,0.283,4.373,3.225,4.398,8.406C36.89,34.903,36.674,37.845,32.517,38.129z">
+                                                    </path>
+                                                    <path
+                                                        d="M13.922,8.295l2.068,6.69v4.513v0.5v0.5h0.5h0.5h1.777h0.5h0.5v-0.5v-0.5v-1.943c0.071,1.94,1.286,3.099,3.297,3.099 c1.212,0,2.205-0.568,2.767-1.471c0.335,1.034,1.156,1.436,1.94,1.436c0.213,0,0.496-0.03,0.823-0.138v0.015h0.5h0.5h1.577h0.5 h0.5v-0.5v-0.5v-8.48v-0.5v-0.5h-0.5h-0.5h-1.577h-0.347h-0.5h-0.5H26.67h-0.5h-0.5v0.5v0.5v0.204 c-0.586-0.78-1.512-1.275-2.606-1.275c-0.749,0-1.413,0.215-1.95,0.585l0.678-2.241l0.195-0.645L22.181,7h-0.674h-0.674h-1.805 h-0.391h-0.391l-0.094,0.38l-0.094,0.38l-0.203,0.821l-0.224-0.838l-0.099-0.371L17.434,7h-0.384h-0.384h-1.788H14.2h-0.678 l0.2,0.648L13.922,8.295z M26.17,11.017v-0.5h0.5h1.577h0.5v0.5v6.503c0,0.011,0,0.021,0,0.03c0.097-0.057,0.23-0.163,0.347-0.283 v-6.25v-0.5h0.5h1.577h0.5v0.5v8.48v0.5h-0.5h-1.577h-0.5v-0.312c-0.555,0.364-1.034,0.435-1.323,0.435 c-0.481,0-1.601-0.196-1.601-2.015V11.017z M23.064,10.446c1.577,0,2.767,1.194,2.767,2.778v4.158 c0,1.633-1.138,2.773-2.767,2.773c-1.812,0-2.81-0.985-2.81-2.773v-4.158C20.254,11.588,21.409,10.446,23.064,10.446z M14.878,7.5 h1.788h0.384l0.099,0.371l0.725,2.717l0.67-2.708l0.094-0.38h0.391h1.805h0.674l-0.195,0.645l-2.046,6.763v4.59v0.5h-0.5h-1.777 h-0.5v-0.5V14.91L14.4,8.148L14.2,7.5H14.878z">
+                                                    </path>
+                                                </g>
+                                                <g>
+                                                    <linearGradient id="~ZEDpqmbqU5aeVFMXpznxb_cs0F7pb81QnM_gr2"
+                                                        x1=".439" x2="44.632" y1="-.097" y2="45.101"
+                                                        gradientUnits="userSpaceOnUse">
+                                                        <stop offset="0" stop-color="#f52537"></stop>
+                                                        <stop offset=".293" stop-color="#f32536"></stop>
+                                                        <stop offset=".465" stop-color="#ea2434"></stop>
+                                                        <stop offset=".605" stop-color="#dc2231"></stop>
+                                                        <stop offset=".729" stop-color="#c8202c"></stop>
+                                                        <stop offset=".841" stop-color="#ae1e25"></stop>
+                                                        <stop offset=".944" stop-color="#8f1a1d"></stop>
+                                                        <stop offset="1" stop-color="#7a1818"></stop>
+                                                    </linearGradient>
+                                                    <path fill="url(#~ZEDpqmbqU5aeVFMXpznxb_cs0F7pb81QnM_gr2)"
+                                                        d="M40,42H8c-1.105,0-2-0.895-2-2V8c0-1.105,0.895-2,2-2h32c1.105,0,2,0.895,2,2v32 C42,41.105,41.105,42,40,42z">
+                                                    </path>
+                                                    <path fill="#fff"
+                                                        d="M14.878,8h1.788l1.227,4.596L19.029,8h1.805l-2.067,6.834v4.664h-1.777v-4.664L14.878,8z M23.064,10.946c-1.389,0-2.31,0.919-2.31,2.278v4.158c0,1.495,0.781,2.273,2.31,2.273c1.269,0,2.267-0.848,2.267-2.273v-4.158 C25.331,11.897,24.341,10.946,23.064,10.946z M23.723,17.311c0,0.462-0.236,0.802-0.66,0.802c-0.436,0-0.688-0.356-0.688-0.802 v-3.947c0-0.464,0.214-0.808,0.657-0.808c0.484,0,0.691,0.334,0.691,0.808C23.723,13.364,23.723,17.311,23.723,17.311z M29.594,11.017v6.438c-0.192,0.241-0.621,0.636-0.927,0.636c-0.336,0-0.42-0.231-0.42-0.571v-6.503H26.67v7.089 c0,0.838,0.256,1.515,1.101,1.515c0.477,0,1.14-0.248,1.822-1.059v0.936h1.577v-8.48H29.594z M32.329,28.221 c-0.556,0-0.672,0.391-0.672,0.947v0.818h1.327v-0.819C32.986,28.621,32.87,28.221,32.329,28.221z M26.49,28.271 c-0.104,0.053-0.207,0.135-0.31,0.246v5.034c0.123,0.132,0.241,0.226,0.356,0.284c0.245,0.124,0.602,0.133,0.768-0.083 c0.087-0.114,0.13-0.299,0.13-0.557v-4.17c0-0.273-0.053-0.479-0.16-0.621C27.092,28.164,26.754,28.138,26.49,28.271z M32.483,21.821c-3.233-0.22-13.738-0.22-16.966,0c-3.493,0.238-3.906,2.349-3.932,7.904c0.026,5.546,0.435,7.666,3.932,7.904 c3.228,0.22,13.733,0.22,16.966,0c3.493-0.238,3.906-2.35,3.932-7.904C36.389,24.18,35.98,22.06,32.483,21.821z M17.183,35.087 h-1.692v-9.361h-1.75v-1.589h5.192v1.589h-1.75v9.361H17.183z M23.199,35.087h-1.502v-0.891c-0.277,0.329-0.565,0.58-0.864,0.751 c-0.809,0.464-1.921,0.453-1.921-1.186V27.01h1.501v6.192c0,0.325,0.078,0.544,0.4,0.544c0.293,0,0.7-0.376,0.883-0.605V27.01 h1.502v8.077L23.199,35.087z M28.981,33.414c0,0.999-0.374,1.777-1.373,1.777c-0.55,0-1.008-0.201-1.426-0.724v0.621h-1.516v-10.95 h1.516v3.526c0.339-0.413,0.799-0.755,1.336-0.755c1.1,0,1.465,0.93,1.465,2.025v4.48H28.981z M34.531,31.239h-2.873v1.525 c0,0.606,0.052,1.13,0.655,1.13c0.634,0,0.672-0.427,0.672-1.13v-0.561h1.546v0.607c0,1.556-0.668,2.499-2.251,2.499 c-1.434,0-2.168-1.045-2.168-2.499v-3.626c0-1.402,0.926-2.376,2.281-2.376c1.441,0,2.137,0.916,2.137,2.376v2.056L34.531,31.239z">
+                                                    </path>
+                                                    <path
+                                                        d="M23.998,21.656c3.434,0,6.868,0.055,8.485,0.165c3.497,0.238,3.906,2.359,3.932,7.904 c-0.026,5.554-0.438,7.666-3.932,7.904c-1.616,0.11-5.051,0.165-8.485,0.165c-3.434,0-6.867-0.055-8.481-0.165 c-3.497-0.238-3.906-2.359-3.932-7.904c0.026-5.556,0.438-7.666,3.932-7.904C17.131,21.711,20.564,21.656,23.998,21.656 M23.998,21.156c-3.749,0-7.011,0.064-8.515,0.166c-4.157,0.284-4.373,3.226-4.398,8.401c0.024,5.18,0.241,8.122,4.398,8.406 c1.504,0.102,4.766,0.166,8.515,0.166s7.013-0.064,8.519-0.166c4.157-0.284,4.374-3.226,4.398-8.401 c-0.024-5.18-0.241-8.122-4.398-8.406C31.011,21.22,27.747,21.156,23.998,21.156L23.998,21.156z"
+                                                        opacity=".07"></path>
+                                                    <path fill="#1b1464"
+                                                        d="M20.834,8l-2.067,6.834v4.664h-1.777v-4.664L14.878,8h1.788l1.227,4.596L19.029,8H20.834 M23.064,10.946c1.277,0,2.267,0.951,2.267,2.278v4.158c0,1.425-0.998,2.273-2.267,2.273c-1.529,0-2.31-0.778-2.31-2.273v-4.158 C20.754,11.865,21.675,10.946,23.064,10.946 M23.063,18.113c0.425,0,0.66-0.34,0.66-0.802v-3.947c0-0.474-0.207-0.808-0.691-0.808 c-0.443,0-0.657,0.344-0.657,0.808v3.947C22.375,17.757,22.627,18.113,23.063,18.113 M31.171,11.017v8.48h-1.577v-0.936 c-0.683,0.811-1.346,1.059-1.822,1.059c-0.845,0-1.101-0.677-1.101-1.515v-7.089h1.577v6.503c0,0.34,0.083,0.571,0.42,0.571 c0.307,0,0.735-0.395,0.927-0.636v-6.438H31.171 M21.508,7.5h-0.674h-1.805h-0.391l-0.094,0.38l-0.67,2.708l-0.725-2.717 L17.05,7.5h-0.384h-1.788H14.2l0.2,0.648l2.091,6.762v4.589v0.5h0.5h1.777h0.5v-0.5v-4.59l2.046-6.763L21.508,7.5L21.508,7.5z M23.064,10.446c-1.655,0-2.81,1.142-2.81,2.778v4.158c0,1.788,0.998,2.773,2.81,2.773c1.629,0,2.767-1.14,2.767-2.773v-4.158 C25.831,11.64,24.641,10.446,23.064,10.446L23.064,10.446z M23.063,17.613c-0.163,0-0.188-0.189-0.188-0.302v-3.947 c0-0.308,0.106-0.308,0.157-0.308c0.103,0,0.191,0,0.191,0.308v3.947C23.223,17.511,23.169,17.613,23.063,17.613L23.063,17.613z M31.671,10.517h-0.5h-1.577h-0.5v0.5v6.249c-0.117,0.12-0.25,0.227-0.347,0.283c0-0.009,0-0.019,0-0.03v-6.503v-0.5h-0.5H26.67 h-0.5v0.5v7.089c0,1.818,1.12,2.015,1.601,2.015c0.289,0,0.768-0.071,1.322-0.435v0.312h0.5h1.577h0.5v-0.5v-8.48V10.517 L31.671,10.517z"
+                                                        opacity=".05"></path>
+                                                    <g opacity=".05">
+                                                        <path
+                                                            d="M32.551,20.823c-1.517-0.103-4.794-0.167-8.553-0.167c-3.759,0-7.035,0.064-8.549,0.167 c-4.824,0.329-4.841,4.11-4.864,8.897c0.023,4.795,0.04,8.578,4.864,8.907c1.514,0.103,4.79,0.167,8.549,0.167 s7.036-0.064,8.553-0.167c4.824-0.329,4.841-4.11,4.864-8.897C37.392,24.936,37.374,21.152,32.551,20.823z M32.517,38.129 c-1.506,0.102-4.77,0.166-8.519,0.166c-3.749,0-7.011-0.064-8.515-0.166c-4.157-0.283-4.373-3.225-4.398-8.406 c0.024-5.175,0.241-8.117,4.398-8.401c1.504-0.102,4.766-0.166,8.515-0.166s7.013,0.064,8.519,0.166 c4.157,0.283,4.373,3.225,4.398,8.406C36.89,34.903,36.674,37.845,32.517,38.129z">
+                                                        </path>
+                                                        <path
+                                                            d="M13.922,8.295l2.068,6.69v4.513v0.5v0.5h0.5h0.5h1.777h0.5h0.5v-0.5v-0.5v-1.943c0.071,1.94,1.286,3.099,3.297,3.099 c1.212,0,2.205-0.568,2.767-1.471c0.335,1.034,1.156,1.436,1.94,1.436c0.213,0,0.496-0.03,0.823-0.138v0.015h0.5h0.5h1.577h0.5 h0.5v-0.5v-0.5v-8.48v-0.5v-0.5h-0.5h-0.5h-1.577h-0.347h-0.5h-0.5H26.67h-0.5h-0.5v0.5v0.5v0.204 c-0.586-0.78-1.512-1.275-2.606-1.275c-0.749,0-1.413,0.215-1.95,0.585l0.678-2.241l0.195-0.645L22.181,7h-0.674h-0.674h-1.805 h-0.391h-0.391l-0.094,0.38l-0.094,0.38l-0.203,0.821l-0.224-0.838l-0.099-0.371L17.434,7h-0.384h-0.384h-1.788H14.2h-0.678 l0.2,0.648L13.922,8.295z M26.17,11.017v-0.5h0.5h1.577h0.5v0.5v6.503c0,0.011,0,0.021,0,0.03c0.097-0.057,0.23-0.163,0.347-0.283 v-6.25v-0.5h0.5h1.577h0.5v0.5v8.48v0.5h-0.5h-1.577h-0.5v-0.312c-0.555,0.364-1.034,0.435-1.323,0.435 c-0.481,0-1.601-0.196-1.601-2.015V11.017z M23.064,10.446c1.577,0,2.767,1.194,2.767,2.778v4.158 c0,1.633-1.138,2.773-2.767,2.773c-1.812,0-2.81-0.985-2.81-2.773v-4.158C20.254,11.588,21.409,10.446,23.064,10.446z M14.878,7.5 h1.788h0.384l0.099,0.371l0.725,2.717l0.67-2.708l0.094-0.38h0.391h1.805h0.674l-0.195,0.645l-2.046,6.763v4.59v0.5h-0.5h-1.777 h-0.5v-0.5V14.91L14.4,8.148L14.2,7.5H14.878z">
+                                                        </path>
+                                                    </g>
+                                                </g>
+                                            </svg><span>Like us on YouTube</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <a href="https://www.instagram.com/muslimhandsuk/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="65"
+                                                height="65" viewBox="0 0 48 48">
+                                                <radialGradient id="yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1" cx="19.38"
+                                                    cy="42.035" r="44.899" gradientUnits="userSpaceOnUse">
+                                                    <stop offset="0" stop-color="#fd5"></stop>
+                                                    <stop offset=".328" stop-color="#ff543f"></stop>
+                                                    <stop offset=".348" stop-color="#fc5245"></stop>
+                                                    <stop offset=".504" stop-color="#e64771"></stop>
+                                                    <stop offset=".643" stop-color="#d53e91"></stop>
+                                                    <stop offset=".761" stop-color="#cc39a4"></stop>
+                                                    <stop offset=".841" stop-color="#c837ab"></stop>
+                                                </radialGradient>
+                                                <path fill="url(#yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1)"
+                                                    d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z">
+                                                </path>
+                                                <radialGradient id="yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2" cx="11.786"
+                                                    cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)"
+                                                    gradientUnits="userSpaceOnUse">
+                                                    <stop offset="0" stop-color="#4168c9"></stop>
+                                                    <stop offset=".999" stop-color="#4168c9" stop-opacity="0"></stop>
+                                                </radialGradient>
+                                                <path fill="url(#yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2)"
+                                                    d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z">
+                                                </path>
+                                                <path fill="#fff"
+                                                    d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z">
+                                                </path>
+                                                <circle cx="31.5" cy="16.5" r="1.5" fill="#fff"></circle>
+                                                <path fill="#fff"
+                                                    d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z">
+                                                </path>
+                                            </svg>
+                                            <span>Follow us on Instagram</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="member__Sec">
+            <div class="member">
+                <div class="member__backimg">
+                    <div class="container">
+                        <div class="member__cont">
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="col-lg-6 col__white">
+                                        <h2>
+                                            Become a Volunteer
+                                        </h2>
+                                        <p>
+                                            Our Volunteers are a devoted community of individuals whose generosity ensures the preservation of our planet through Muslim Hands environmental initiatives. Join us in our mission to make environmental preservation accessible to all, making our environment neat, clean and green, promoting a sustainable future for generations to come.
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <a class="float__r" href="https://docs.google.com/forms/d/e/1FAIpQLSfLIVm1Y_xDEOLvqgWuT0vdwaUmdmKYrF5rDGERLXL3S0N7EQ/viewform?vc=0&c=0&w=1&flr=0&pli=1">Join us</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="fourth__sec text-center">
+                <div class="container">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <p><span id="count1">100+</span>Gardens</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <p><span id="count2">30000+</span>Plants</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <p><span id="count3">55%</span>Greenery</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="piee__2">
+            <div class="pie mt-5">
+                <h2 class="text-center mb-5">Tree Distribution</h2>
+                <div id="myPieChart"></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer__top">
+                <div class="col-lg-12">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3">
+                            <img src="{% static 'images/logo-mhl-gm.png' %}" alt="">
+                        </div>
+                        <div class="col-lg-3">
+
+                            <ul>
+                                <li>
+                                    <a href="https://www.facebook.com/MuslimHandsMRP/"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                                            <path
+                                                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                                        </svg></a>
+                                </li>
+                                <li>
+                                    <a href="https://x.com/muslimhandsuk?mx=2"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" fill="currentColor" class="bi bi-twitter-x"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+                                        </svg></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/muslimhandsuk/"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                                        </svg></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/user/muslimhandsuk/"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z" />
+                                        </svg></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4">
+                            <p>Established in 1993, Muslim Hands is an aid agency and NGO helping those affected by
+                                poverty, conflict and natural disaster in over 20 countries worldwide.</p>
+                        </div>
+                        <div class="col-lg-2">
+                            <div>
+                                <a class="bg__yell2" href="https://muslimhands.org.uk/donate"
+                                    class="btn btn-secondary btn-block _btn-gradient _btn-shadow">Donate</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="footer__bottom">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <h2>
+                                Appeals
+                            </h2>
+                            <ul>
+                                <li>
+                                    <a href="">Climate Action</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-2">
+                            <h2>
+                                Our Work
+                            </h2>
+                            <ul>
+                                <li>
+                                    <a href="#">Solid Waste</a>
+                                </li>
+                                <li>
+                                    <a href="">Water</a>
+                                </li>
+                                <li>
+                                    <a href="">Plantaion</a>
+                                </li>
+                                <li>
+                                    <a href="">Orphans Sponsorship</a>
+                                </li>
+                                <li>
+                                    <a href="">Health</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-2">
+                            <h2>
+                                Get Involoved
+                            </h2>
+                            <ul>
+                                <li>
+                                    <a href="{% url 'events' %}">Events</a>
+                                </li>
+                                <li>
+                                    <a href="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfLIVm1Y_xDEOLvqgWuT0vdwaUmdmKYrF5rDGERLXL3S0N7EQ/viewform?vc=0&c=0&w=1&flr=0&pli=1">Volunteer</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.facebook.com/MuslimHandsMRP/">Facebook</a>
+                                </li>
+                                <li>
+                                    <a href="https://x.com/muslimhandsuk?mx=2">Twitter</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/muslimhandsuk/">Instagram</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/user/muslimhandsuk">YouTube</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-2">
+                            <h2>
+                                Latest
+                            </h2>
+                            <ul>
+                                <li>
+                                    <a href="{% url 'gallery' %}">Galleries</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'gallery' %}">Videos</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-2">
+                            <h2>
+                                About Us
+                            </h2>
+                            <ul>
+                                <li>
+                                    <a href="{% url 'about_us' %}">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'contact_us' %}">Contact Us</a>
+                                </li>
+                                <li>
+                                    <a href="https://muslimhands.org.uk/ways-to-give">Ways to Give</a>
+                                </li>
+                                <li>
+                                    <a href="https://docs.google.com/forms/d/1r0xzyGe33x4CpJpcVRLAXkPSvnG5oQ9KmpdqJSbz7wk/viewform?edit_requested=true">Request for Plants</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    Copyright © 2024 Muslim Hands. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        // Function to start counting animation
+        function startCounting() {
+            $('#count1').addClass('counting').prop('Counter', 0).animate({
+                Counter: 100
+            }, {
+                duration: 5000,
+                step: function (now) {
+                    $(this).html(Math.ceil(now) + '<span>+</span>');
+                }
+            });
+
+            $('#count2').addClass('counting').prop('Counter', 0).animate({
+                Counter: 30000
+            }, {
+                duration: 5000,
+                step: function (now) {
+                    $(this).html(Math.ceil(now) + '<span>+</span>');
+                }
+            });
+
+            $('#count3').addClass('counting').prop('Counter', 0).animate({
+                Counter: 55
+            }, {
+                duration: 5000,
+                step: function (now) {
+                    $(this).html(Math.ceil(now) + '<span>%</span>');
+                }
+            });
+        }
+
+
+        // Using Intersection Observer API to detect when the element is in the viewport
+        var observer = new IntersectionObserver(function (entries) {
+            if (entries[0].isIntersecting) {
+                // Start counting animation
+                startCounting();
+                // Disconnect the observer after animation starts
+                observer.disconnect();
+            }
+        }, { threshold: 0.5 }); // Adjust the threshold as needed
+
+        // Observe the target element
+        observer.observe(document.querySelector('.fourth__sec'));
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const imageContainers = document.querySelectorAll('.zoom-image-container');
+
+            imageContainers.forEach(function (container) {
+                const image = container.querySelector('.zoom-image');
+
+                container.addEventListener('mouseover', function () {
+                    image.style.transitionDuration = '3s';
+                    image.style.transform = 'scale(1.5)';  // Adjust the scale factor as needed
+                });
+
+                container.addEventListener('mouseout', function () {
+                    image.style.transitionDuration = '0.5s'; // Reset transition duration
+                    image.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var selectedOption = document.querySelector('.selected-option');
+            var optionsContainer = document.querySelector('.options');
+            var customSelect = document.querySelector('.custom-select');
+            var isOpen = false;
+        
+            selectedOption.addEventListener('click', function (event) {
+                event.stopPropagation(); // Prevent the click event from bubbling up
+        
+                if (!isOpen) {
+                    optionsContainer.style.display = 'block';
+                    isOpen = true;
+                } else {
+                    optionsContainer.style.display = 'none';
+                    isOpen = false;
+                    customSelect.classList.remove('active'); // Ensure hover effect is reset
+                }
+            });
+        
+            document.addEventListener('click', function (event) {
+                if (!customSelect.contains(event.target)) {
+                    optionsContainer.style.display = 'none'; // Hide options only when clicking outside the container
+                    isOpen = false;
+                    customSelect.classList.remove('active'); // Ensure hover effect is reset
+                }
+            });
+        
+            // Handle hover to ensure hover effect is not interrupted
+            customSelect.addEventListener('mouseenter', function () {
+                if (!isOpen) {
+                    optionsContainer.style.display = 'block';
+                }
+            });
+        
+            customSelect.addEventListener('mouseleave', function () {
+                if (!isOpen) {
+                    optionsContainer.style.display = 'none';
+                }
+            });
+        });
+        
+    </script>
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script>
+        // Updated data
+        const data = [
+            { label: 'Kino, Malta', value: 30 },
+            { label: 'Lemon', value: 20 },
+            { label: 'Shahtoot', value: 10 },
+            { label: 'Moringa', value: 17 },
+            { label: 'Guava', value: 13 },
+            { label: 'Anjeer', value: 10 }
+        ];
+
+        // Function to draw the pie chart
+        function drawPieChart() {
+            // Remove any existing SVG
+            d3.select("#myPieChart").select("svg").remove();
+
+            // Get container dimensions
+            const containerWidth = document.querySelector(".pie").clientWidth;
+            const width = containerWidth * 1.2; // Increase the width
+            const height = containerWidth * 1.2; // Increase the height proportionally
+            const radius = Math.min(width, height) / 2;
+
+            // Create SVG element
+            const svg = d3.select("#myPieChart")
+                .append("svg")
+                .attr("width", width)
+                .attr("height", height)
+                .append("g")
+                .attr("transform", `translate(${width / 2},${height / 2})`);
+
+            // Define pie layout
+            const pie = d3.pie()
+                .value(d => d.value);
+
+            // Define arc generator
+            const arc = d3.arc()
+                .innerRadius(0)
+                .outerRadius(radius);
+
+            // Generate pie chart
+            const arcs = svg.selectAll("arc")
+                .data(pie(data))
+                .enter()
+                .append("g")
+                .attr("class", "arc");
+
+            // Append path for each arc
+            arcs.append("path")
+                .attr("d", arc)
+                .attr("fill", (d, i) => ['#FF6384', '#36A2EB', '#FFCE56', '#4CAF50', '#9966FF', '#FF9F40'][i]);
+
+            // Word-wrap function
+            function wrap(text, width) {
+                text.each(function () {
+                    const text = d3.select(this);
+                    const words = text.text().split(/\s+/).reverse();
+                    let word,
+                        line = [],
+                        lineNumber = 0,
+                        lineHeight = 1.1, // ems
+                        y = text.attr("y"),
+                        dy = parseFloat(text.attr("dy")),
+                        tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
+                    while (word = words.pop()) {
+                        line.push(word);
+                        tspan.text(line.join(" "));
+                        if (tspan.node().getComputedTextLength() > width) {
+                            line.pop();
+                            tspan.text(line.join(" "));
+                            line = [word];
+                            tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+                        }
+                    }
+                });
+            }
+
+            // Append text labels with percentages
+            arcs.append("text")
+                .attr("transform", d => `translate(${arc.centroid(d)})`)
+                .attr("text-anchor", "middle")
+                .attr("font-size", `${Math.min(width, height) / 38}px`) // Adjust font size based on the chart size
+                .attr("dy", "0.38em")
+                .text(d => `${d.data.label} (${d.data.value}%)`)
+                .call(wrap, radius / 2); // Apply word-wrap function
+        }
+
+        // Initial draw
+        drawPieChart();
+
+        // Redraw on window resize
+        window.addEventListener('resize', drawPieChart);
+    </script>
+
+{% comment %} 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var selectedOption = document.querySelector('.selected-option');
+            var optionsContainer = document.querySelector('.options');
+    
+            selectedOption.addEventListener('click', function () {
+                optionsContainer.style.display = optionsContainer.style.display === 'none' || optionsContainer.style.display === '' ? 'block' : 'none';
+            });
+    
+            document.addEventListener('click', function (event) {
+                if (!selectedOption.contains(event.target)) {
+                    optionsContainer.style.display = 'none';
+                }
+            });
+        });
+    </script> {% endcomment %}
+
+</body>
+
+</html>

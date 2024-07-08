@@ -1,0 +1,96 @@
+{% extends "website/main.html" %}
+{% load static %}
+{% block title %}Gallery{% endblock %}
+
+{% block content %}
+<main>
+    <section class="third__sectop gallery">
+        <div class="container citygardens">
+            <h1 class="text-center">Gallery</h1>
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-3 gallery__menu mt-4">
+                        <a href="#Pictures">Pictures</a>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-3 gallery__menu mt-4">
+                        <a href="#videos">Videos</a>
+                    </div>
+                </div>
+            </div>
+            <p class="mt-5">
+                Welcome to the Muslim Hands Climate Action Gallery, where we showcase our commitment to environmental sustainability and climate action. Through innovative projects, we promote plantation initiatives, sustainability, conserve biodiversity, empower communities with environmental education, and advocate for climate justice.
+            </p>
+            <div class="col-lg-12" id="Pictures">
+                <h2>
+                    Pictures
+                </h2>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="overf__2">
+                            <img src="{% static 'images/Neelum1.jpg'%}" alt="image">
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="overf__2">
+                            <img src="{% static 'images/Neelum2.jpg'%}" alt="image">
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="overf__2">
+                            <img src="{% static 'images/Neelum3.jpg'%}" alt="image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 mt-4">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="overf__2">
+                            <img src="{% static 'images/Neelum4.jpg'%}" alt="image">
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="overf__2">
+                            <img src="{% static 'images/Neelum5.jpg'%}" alt="image">
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="overf__2">
+                            <img src="{% static 'images/Neelum1.jpg'%}" alt="image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="third__sectop gallery" id="videos" class="mt-5">
+        <div class="container">
+            <h2>
+                Videos
+            </h2>
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="gallery__video">
+                            <video class="video" controls="" autoplay="" muted="">
+                                <source src="/static/images/WhatsApp%20Video%202024-01-13%20at%2010.39.47_f82568ab.mp4"
+                                    type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="gallery__video mt-5">
+                            <video class="video" controls="" autoplay="" muted="">
+                                <source src="/static/images/WhatsApp%20Video%202024-01-13%20at%2010.39.47_f82568ab.mp4"
+                                    type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

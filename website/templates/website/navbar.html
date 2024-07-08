@@ -1,0 +1,84 @@
+{% load static %}
+<header>
+    <div class="header__back fixed-top">
+        <nav class="">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fa-solid fa-bars"></i>
+            </label>
+            <a href="{% url 'home' %}">
+                <img src="{% static 'images/Climate-Action-Logo.png' %}" alt="logo">
+            </a>
+            <ul class="links">
+                    <li class="{% if request.path == '/' %}active{% endif %}"><a href="{% url 'home'%}">Home</a></li>
+                    <li class="{% if request.path == '/gardens/' %}active{% endif %}"><a href="{% url 'gardens'%}">Achievements</a></li>
+                    <li class="{% if request.path == '/gallery/' %}active{% endif %}"><a href="{% url 'gallery'%}">Gallery</a></li>
+                    <li class="{% if request.path == '/training/' %}active{% endif %}"><a href="{% url 'training'%}">Training</a></li>
+                    <li class="{% if request.path == '/events/' %}active{% endif %}"><a href="{% url 'events'%}">Events</a></li>
+                <li class="custom-select">
+                    <div class="selected-option">Contact Us</div>
+                    <div class="options">
+                        <div class="option"><a href="{% url 'contact_us' %}">Contact Us</a></div>
+                        <div class="option"><a href="{% url 'about_us' %}">About Us</a></div>
+                        <div class="option"><a href="https://docs.google.com/forms/d/1r0xzyGe33x4CpJpcVRLAXkPSvnG5oQ9KmpdqJSbz7wk/viewform?edit_requested=true">Request for Plants</a></div>
+                        <div class="option"><a href="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfLIVm1Y_xDEOLvqgWuT0vdwaUmdmKYrF5rDGERLXL3S0N7EQ/viewform?vc=0&c=0&w=1&flr=0&pli=1">Volunteer</a></div>
+                    </div>
+                </li>
+                <ul class="links__3">
+                    <li>
+                        <a class="bg__yell" href="https://muslimhands.org.uk/donate">DONATE</a>
+                    </li>
+                </ul>
+            </ul>
+            <ul class="links__2">
+                <li>
+                    <a class="bg__yell" href="https://muslimhands.org.uk/donate">DONATE</a>
+                </li>
+                <li><a class="_number" href="tel:0115 911 7222">+925827448900</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var selectedOption = document.querySelector('.selected-option');
+        var optionsContainer = document.querySelector('.options');
+        var customSelect = document.querySelector('.custom-select');
+        var isOpen = false;
+    
+        selectedOption.addEventListener('click', function (event) {
+            event.stopPropagation(); // Prevent the click event from bubbling up
+    
+            if (!isOpen) {
+                optionsContainer.style.display = 'block';
+                isOpen = true;
+            } else {
+                optionsContainer.style.display = 'none';
+                isOpen = false;
+                customSelect.classList.remove('active'); // Ensure hover effect is reset
+            }
+        });
+    
+        document.addEventListener('click', function (event) {
+            if (!customSelect.contains(event.target)) {
+                optionsContainer.style.display = 'none'; // Hide options only when clicking outside the container
+                isOpen = false;
+                customSelect.classList.remove('active'); // Ensure hover effect is reset
+            }
+        });
+    
+        // Handle hover to ensure hover effect is not interrupted
+        customSelect.addEventListener('mouseenter', function () {
+            if (!isOpen) {
+                optionsContainer.style.display = 'block';
+            }
+        });
+    
+        customSelect.addEventListener('mouseleave', function () {
+            if (!isOpen) {
+                optionsContainer.style.display = 'none';
+            }
+        });
+    });
+    
+</script>
