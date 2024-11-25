@@ -95,11 +95,50 @@ def environment_protection_agency(request):
 def Chapran_Village_Mirpur(request):
     return render(request, 'website/Chapran_Village_Mirpur.html')
 
+#NEW MIRPUR CITY ADDING ON 01-11-2024
+
+def August_Muncipal_Corporation_Plantation_Mirpur(request):
+    return render(request, 'website/14_August_Muncipal_Corporation_Plantation_Mirpur.html')
+
+def August14_Plantation(request):
+    return render(request, 'website/14_August_Plantation.html')
+
+def Assistant_Commissioner_Islamghar_Mirpur(request):
+    return render(request, 'website/Assistant_Commissioner_Islamghar_Mirpur.html')
+
+def Bankhurma_Mirpur(request):
+    return render(request, 'website/Bankhurma_Mirpur.html')
+
+def Bankhurma_Chapran_Mirpur(request):
+    return render(request, 'website/Bankhurma_Chapran_Mirpur.html')
+
+def Benazir_Medical_College_Plantation_2024Season2_Mirpur(request):
+    return render(request, 'website/Benazir_Medical_College_Plantation_2024Season2_Mirpur.html')
+
+def C4_Ground_Mirpur(request):
+    return render(request, 'website/C4_Ground_Mirpur.html')
+
+def Degree_College_Mirpur(request):
+    return render(request, 'website/Degree_College_Mirpur.html')
+
+
+
+
+
 def Nelum_Muzaffarabad(request):
     return render(request, 'website/Nelum_Muzaffarabad.html')
 
 def Rarra_Central_Jail_Muzaffarabad(request):
     return render(request, 'website/Rarra_Central_Jail_Muzaffarabad.html')
+
+#NEW MUZAFFARABAD CITY ADDING ON 01-11-2024
+
+def Civil_Veterinary_Hospital_Gharhi_Dupatta_Muzaffarabad(request):
+    return render(request, 'website/Civil_Veterinary_Hospital_Gharhi_Dupatta_Muzaffarabad.html')
+
+
+
+
 
 def Girls_High_School_Tararkhal(request):
     return render(request, 'website/Girls_High_School_Tararkhal.html')
@@ -124,6 +163,40 @@ def BHU_Bider_Brains_Bhimber(request):
 
 def District_Jail_Bhimber(request):
     return render(request, 'website/District_Jail_Bhimber.html')
+
+#NEW BHIMBER CITY ADDING ON 02-11-2024
+def Alharmain_Daraiyan_Welfare_Foundation_Bhimber(request):
+    return render(request, 'website/Alharmain_Daraiyan_Welfare_Foundation_Bhimber.html')
+
+def Bhimber_Uni_Bhimber(request):
+    return render(request, 'website/Bhimber_Uni_Bhimber.html')
+
+def BHU_Banain_Bhimber(request):
+    return render(request, 'website/BHU_Banain_Bhimber.html')
+
+def BHU_Chaneer_Bhimber(request):
+    return render(request, 'website/BHU_Chaneer_Bhimber.html')
+
+def BHU_Kherowal_Bhimber(request):
+    return render(request, 'website/BHU_Kherowal_Bhimber.html')
+
+def BHU_Kot_Jamel_Bhimber(request):
+    return render(request, 'website/BHU_Kot_Jamel_Bhimber.html')
+
+def BHU_Maghloora_Bhimber(request):
+    return render(request, 'website/BHU_Maghloora_Bhimber.html')
+
+def Darbar_Baba_Shadi_Shaheed(request):
+    return render(request, 'website/Darbar_Baba_Shadi_Shaheed.html')
+
+def DHO_Bhimber(request):
+    return render(request, 'website/DHO_Bhimber.html')
+
+def DHO_Mirpur_Fruit_garden(request):
+    return render(request, 'website/DHO_Mirpur_Fruit_garden.html')
+
+
+
 
 def Dadyal_1(request):
     return render(request, 'website/Dadyal_1.html')

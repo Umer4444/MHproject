@@ -4,6 +4,18 @@ from django.urls import path
 urlpatterns = [
     path('', views.home, name="home"),
     path('cities_mirpur/', views.cities_mirpur, name="cities_mirpur"),
+
+    #new cities of Mirpur
+    path('14_August_Muncipal_Corporation_Plantation_Mirpur/', views.August_Muncipal_Corporation_Plantation_Mirpur, name="14_August_Muncipal_Corporation_Plantation_Mirpur"),
+    path('14_August_Plantation/', views.August14_Plantation, name="14_August_Plantation"),
+    path('Assistant_Commissioner_Islamghar_Mirpur/', views.Assistant_Commissioner_Islamghar_Mirpur, name="Assistant_Commissioner_Islamghar_Mirpur"),
+    path('Bankhurma_Mirpur/', views.Bankhurma_Mirpur, name="Bankhurma_Mirpur"),
+    path('Bankhurma_Chapran_Mirpur/', views.Bankhurma_Chapran_Mirpur, name="Bankhurma_Chapran_Mirpur"),
+    path('Benazir_Medical_College_Plantation_2024Season2_Mirpur/', views.Benazir_Medical_College_Plantation_2024Season2_Mirpur, name="Benazir_Medical_College_Plantation_2024Season2_Mirpur"),
+    path('C4_Ground_Mirpur/', views.C4_Ground_Mirpur, name="C4_Ground_Mirpur"),
+    path('Degree_College_Mirpur/', views.Degree_College_Mirpur, name="Degree_College_Mirpur"),
+    path('DHO_Mirpur_Fruit_garden/', views.DHO_Mirpur_Fruit_garden, name="DHO_Mirpur_Fruit_garden"),
+    
     path('Benazir_Medical_College_Mirpur/', views.Benazir_Medical_College_Mirpur, name="Benazir_Medical_College_Mirpur"),
     path('Benazir_Medical_Collegetwo_Mirpur/', views.Benazir_Medical_Collegetwo_Mirpur, name="Benazir_Medical_Collegetwo_Mirpur"),
     path('Opposite_to_Kashmir_Mirpur/', views.Opposite_to_Kashmir_Mirpur, name="Opposite_to_Kashmir_Mirpur"),
@@ -41,6 +53,19 @@ urlpatterns = [
     path('Ghura_Khurd_Dera_Mirpur/', views.Ghura_Khurd_Dera_Mirpur, name="Ghura_Khurd_Dera_Mirpur"),
     path('Patni_Bhimber/', views.Patni_Bhimber, name="Patni_Bhimber"),
     path('BHU_Bider_Brains_Bhimber/', views.BHU_Bider_Brains_Bhimber, name="BHU_Bider_Brains_Bhimber"),
+
+    #new cities of Bhimber
+    path('Alharmain_Daraiyan_Welfare_Foundation_Bhimber/', views.Alharmain_Daraiyan_Welfare_Foundation_Bhimber, name="Alharmain_Daraiyan_Welfare_Foundation_Bhimber"),
+    path('Bhimber_Uni_Bhimber/', views.Bhimber_Uni_Bhimber, name="Bhimber_Uni_Bhimber"),
+    path('BHU_Banain_Bhimber/', views.BHU_Banain_Bhimber, name="BHU_Banain_Bhimber"),
+    path('BHU_Chaneer_Bhimber/', views.BHU_Chaneer_Bhimber, name="BHU_Chaneer_Bhimber"),
+    path('BHU_Kherowal_Bhimber/', views.BHU_Kherowal_Bhimber, name="BHU_Kherowal_Bhimber"),
+    path('BHU_Kot_Jamel_Bhimber/', views.BHU_Kot_Jamel_Bhimber, name="BHU_Kot_Jamel_Bhimber"),
+    path('BHU_Maghloora_Bhimber/', views.BHU_Maghloora_Bhimber, name="BHU_Maghloora_Bhimber"),
+    path('Darbar_Baba_Shadi_Shaheed/', views.Darbar_Baba_Shadi_Shaheed, name="Darbar_Baba_Shadi_Shaheed"),
+    path('DHO_Bhimber/', views.DHO_Bhimber, name="DHO_Bhimber"),
+
+
     path('District_Jail_Bhimber/', views.District_Jail_Bhimber, name="District_Jail_Bhimber"),
     path('Dadyal_1/', views.Dadyal_1, name="Dadyal_1"),
     path('Dadyal_2/', views.Dadyal_2, name="Dadyal_2"),
@@ -52,6 +77,9 @@ urlpatterns = [
     
 
     path('cities_muzaffarabad/', views.cities_muzaffarabad, name="cities_muzaffarabad"),
+    #new cities of Muzaffarabad
+    path('Civil_Veterinary_Hospital_Gharhi_Dupatta_Muzaffarabad/', views.Civil_Veterinary_Hospital_Gharhi_Dupatta_Muzaffarabad, name="Civil_Veterinary_Hospital_Gharhi_Dupatta_Muzaffarabad"),
+
     path('cities_rawalakot/', views.cities_rawalakot, name="cities_rawalakot"),
     path('cities_kotli/', views.cities_kotli, name="cities_kotli"),
     path('cities_bhimber/', views.cities_bhimber, name="cities_bhimber"),
